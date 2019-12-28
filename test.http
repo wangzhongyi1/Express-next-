@@ -1,0 +1,25 @@
+### 关于如何使用 rest client
+@url=http://localhost:5000
+@json=Content-Type: application/json
+
+###
+get {{url}}
+### 注册
+post {{url}}/api/register
+{{json}}
+
+{
+  "username": "user2",
+  "password": "123456"
+}
+### 登录
+post {{url}}/api/login
+{{json}}
+
+{
+  "username": "user2",
+  "password": "123456"
+}
+### 将token放入请求头中
+get {{url}}/api/profile
+Authorization: Bearer 1eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlMDc0YzcwMGYwNDBhMmFmODBlZjk4ZSIsImlhdCI6MTU3NzUzOTA2OH0.Z-6XMsJFFT1_h8MfoJXwTNTQFEuoMmjXkrQ9FGmQFMs
